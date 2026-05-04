@@ -286,8 +286,7 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Bottom fade for smooth transition */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-sharks-navy-darker" />
+
       </div>
     </section>
   )
