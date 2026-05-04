@@ -28,5 +28,3 @@ export default function SharksCompanyPage() {
     </main>
   )
 }
-</content>
-<parameter name="taskNameActive">Updating page

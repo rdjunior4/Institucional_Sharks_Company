@@ -119,5 +119,3 @@ export function SharkFinTransition({ variant = "dark-to-light" }: SharkFinTransi
     </div>
   )
 }
-</content>
-<parameter name="taskNameActive">Refining transition

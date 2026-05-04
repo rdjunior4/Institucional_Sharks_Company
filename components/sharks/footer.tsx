@@ -118,5 +118,3 @@ export function Footer() {
     </footer>
   )
 }
-</content>
-<parameter name="taskNameActive">Refining footer

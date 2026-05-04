@@ -67,5 +67,3 @@ export function FinalCTASection() {
     </section>
   )
 }
-</content>
-<parameter name="taskNameActive">Refining final CTA

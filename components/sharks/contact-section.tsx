@@ -297,5 +297,3 @@ export function ContactSection() {
     </section>
   )
 }
-</content>
-<parameter name="taskNameActive">Refining contact

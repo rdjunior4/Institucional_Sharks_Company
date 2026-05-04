@@ -139,5 +139,3 @@ export function AboutSection() {
     </section>
   )
 }
-</content>
-<parameter name="taskNameActive">Refining about section

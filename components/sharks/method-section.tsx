@@ -41,27 +41,29 @@ export function MethodSection() {
       ref={ref}
       className="relative overflow-hidden bg-background py-24 lg:py-32"
     >
-      <div className="bg-grid-light pointer-events-none absolute inset-0 opacity-40" />
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-grid-light bg-grid-fade opacity-40" />
+      <div className="absolute left-1/2 top-1/2 h-96 w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="eyebrow justify-center"
+            className="eyebrow"
           >
-            Metodologia
+            Metodologia Sharks
           </motion.span>
 
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-5 text-balance text-3xl font-semibold leading-[1.1] text-foreground sm:text-4xl lg:text-[2.75rem]"
+            className="mt-5 text-balance text-3xl font-semibold leading-[1.1] text-foreground sm:text-4xl lg:text-[2.5rem]"
           >
-            Nosso <span className="sharks-gradient-text">método</span> em quatro etapas.
+            Nosso <span className="sharks-gradient-text">Método</span>
           </motion.h2>
 
           <motion.p
@@ -71,56 +73,58 @@ export function MethodSection() {
             className="mx-auto mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground"
           >
             Uma operação de marketing precisa de leitura, direção, execução e evolução
-            contínua — sempre nessa ordem.
+            contínua.
           </motion.p>
         </div>
 
-        {/* Desktop horizontal */}
-        <div className="mt-16 hidden lg:block">
+        {/* Steps - Desktop Horizontal */}
+        <div className="mt-20 hidden lg:block">
           <div className="relative">
-            <div className="absolute left-16 right-16 top-12 h-px bg-border">
+            {/* Connection Line */}
+            <div className="absolute left-[12%] right-[12%] top-12 h-px bg-border">
               <motion.div
-                className="h-full bg-gradient-to-r from-primary via-primary to-primary/40"
+                className="h-full bg-gradient-to-r from-primary via-primary to-primary/50"
                 initial={{ width: 0 }}
                 animate={isInView ? { width: "100%" } : {}}
-                transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
+                transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
               />
             </div>
 
+            {/* Steps */}
             <div className="relative grid grid-cols-4 gap-6">
               {steps.map((step, index) => {
                 const Icon = step.icon
                 return (
                   <motion.div
                     key={step.number}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 16 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                    className="relative"
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.12 }}
+                    className="text-center"
                   >
+                    {/* Icon Circle */}
                     <div className="relative mx-auto mb-6 flex h-24 w-24 items-center justify-center">
-                      <div className="absolute inset-0 rounded-full border border-border bg-card" />
                       <motion.div
-                        className="absolute inset-0 rounded-full border-2 border-primary"
-                        initial={{ scale: 0.7, opacity: 0 }}
+                        className="absolute inset-0 rounded-full border border-primary/20 bg-card"
+                        initial={{ scale: 0.8, opacity: 0 }}
                         animate={isInView ? { scale: 1, opacity: 1 } : {}}
-                        transition={{ duration: 0.4, delay: 0.4 + index * 0.15 }}
+                        transition={{ duration: 0.5, delay: 0.5 + index * 0.15 }}
                       />
-                      <div className="absolute inset-2 rounded-full bg-primary/5" />
-                      <Icon className="relative h-7 w-7 text-primary" />
-                    </div>
-
-                    <div className="rounded-xl border border-border bg-card p-5 text-center">
-                      <span className="text-xs font-semibold tracking-wider text-primary">
+                      <div className="relative z-10 flex h-16 w-16 flex-col items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20">
+                        <Icon className="h-5 w-5" strokeWidth={2} />
+                      </div>
+                      <span className="absolute -top-2 right-2 rounded-full border border-border bg-background px-2 py-0.5 text-[10px] font-bold tracking-wider text-primary">
                         {step.number}
                       </span>
-                      <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground">
-                        {step.title}
-                      </h3>
-                      <p className="mt-2 text-pretty text-[13px] leading-relaxed text-muted-foreground">
-                        {step.description}
-                      </p>
                     </div>
+
+                    {/* Content */}
+                    <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                      {step.title}
+                    </h3>
+                    <p className="mx-auto mt-2 max-w-[200px] text-pretty text-sm leading-relaxed text-muted-foreground">
+                      {step.description}
+                    </p>
                   </motion.div>
                 )
               })}
@@ -128,15 +132,16 @@ export function MethodSection() {
           </div>
         </div>
 
-        {/* Mobile vertical */}
+        {/* Steps - Mobile Vertical */}
         <div className="mt-12 lg:hidden">
-          <div className="relative space-y-6">
-            <div className="absolute bottom-6 left-6 top-6 w-px bg-border">
+          <div className="relative space-y-8">
+            {/* Vertical Line */}
+            <div className="absolute bottom-4 left-7 top-4 w-px bg-border">
               <motion.div
-                className="w-full bg-primary"
+                className="w-full bg-gradient-to-b from-primary to-primary/50"
                 initial={{ height: 0 }}
                 animate={isInView ? { height: "100%" } : {}}
-                transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
+                transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
               />
             </div>
 
@@ -145,20 +150,23 @@ export function MethodSection() {
               return (
                 <motion.div
                   key={step.number}
-                  initial={{ opacity: 0, x: -10 }}
+                  initial={{ opacity: 0, x: -12 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="relative flex gap-4"
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.12 }}
+                  className="relative flex gap-5"
                 >
-                  <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-primary bg-card">
-                    <Icon className="h-5 w-5 text-primary" />
+                  {/* Icon */}
+                  <div className="relative z-10 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20">
+                    <Icon className="h-5 w-5" strokeWidth={2} />
                   </div>
 
-                  <div className="flex-1 rounded-xl border border-border bg-card p-4">
+                  {/* Content */}
+                  <div className="pt-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-semibold tracking-wider text-primary">
+                      <span className="text-[10px] font-bold tracking-wider text-primary">
                         {step.number}
                       </span>
+                      <div className="h-px w-6 bg-border" />
                       <h3 className="text-base font-semibold tracking-tight text-foreground">
                         {step.title}
                       </h3>
@@ -176,5 +184,3 @@ export function MethodSection() {
     </section>
   )
 }
-</content>
-<parameter name="taskNameActive">Refining method

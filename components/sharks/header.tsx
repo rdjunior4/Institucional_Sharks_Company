@@ -115,5 +115,3 @@ export function Header() {
     </motion.header>
   )
 }
-</content>
-<parameter name="taskNameActive">Refining header
