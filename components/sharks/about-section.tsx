@@ -37,7 +37,9 @@ export function AboutSection() {
       ref={ref}
       className="relative overflow-hidden bg-background py-24 lg:py-32"
     >
-      <div className="bg-grid-light pointer-events-none absolute inset-0 opacity-50" />
+      {/* Gradient transition from hero */}
+      <div className="pointer-events-none absolute inset-x-0 -top-px h-32 bg-gradient-to-b from-sharks-navy-deep to-transparent" />
+      <div className="bg-grid pointer-events-none absolute inset-0 bg-grid-fade opacity-30" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-12">

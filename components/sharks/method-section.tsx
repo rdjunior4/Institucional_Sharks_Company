@@ -41,9 +41,11 @@ export function MethodSection() {
       ref={ref}
       className="relative overflow-hidden bg-background py-24 lg:py-32"
     >
+      {/* Gradient transitions */}
+      <div className="pointer-events-none absolute inset-x-0 -top-px h-32 bg-gradient-to-b from-sharks-navy to-transparent" />
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-light bg-grid-fade opacity-40" />
-      <div className="absolute left-1/2 top-1/2 h-96 w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+      <div className="absolute inset-0 bg-grid bg-grid-fade opacity-25" />
+      <div className="absolute left-1/2 top-1/2 h-96 w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sharks-blue/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}

@@ -40,9 +40,11 @@ export function Header() {
         <div className="flex h-16 items-center justify-between lg:h-[72px]">
           {/* Logo */}
           <Link href="#home" className="flex items-center gap-2">
-            <span className="text-base font-semibold tracking-tight text-white">
-              Sharks<span className="text-sharks-blue-light">.</span>Company
-            </span>
+            <img 
+              src="http://sharkscompany.online/wp-content/uploads/2026/05/SHARKS-COMPANY-3D-e1777902632718.png" 
+              alt="Sharks Company" 
+              className="h-10 w-auto object-contain" 
+            />
           </Link>
 
           {/* Desktop Nav */}

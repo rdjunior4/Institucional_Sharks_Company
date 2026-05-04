@@ -48,10 +48,13 @@ export function CasesSection() {
       ref={ref}
       className="relative overflow-hidden bg-background py-24 lg:py-32"
     >
+      {/* Gradient transition */}
+      <div className="pointer-events-none absolute inset-x-0 -top-px h-32 bg-gradient-to-b from-background to-transparent" />
       {/* Background */}
+      <div className="absolute inset-0 bg-grid bg-grid-fade opacity-20" />
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -right-40 top-0 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute -right-40 top-0 h-80 w-80 rounded-full bg-sharks-blue/5 blur-3xl" />
+        <div className="absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-sharks-blue/5 blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

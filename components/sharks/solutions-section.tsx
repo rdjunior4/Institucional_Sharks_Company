@@ -254,11 +254,14 @@ export function SolutionsSection() {
     <section
       id="solucoes"
       ref={ref}
-      className="relative overflow-hidden bg-secondary py-24 lg:py-32 text-secondary-foreground"
+      className="relative overflow-hidden bg-sharks-navy py-24 lg:py-32 text-white"
     >
+      {/* Gradient transitions */}
+      <div className="pointer-events-none absolute inset-x-0 -top-px h-32 bg-gradient-to-b from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 -bottom-px h-32 bg-gradient-to-t from-background to-transparent" />
       {/* Background */}
-      <div className="absolute inset-0 bg-grid bg-grid-fade opacity-40" />
-      <div className="absolute left-1/2 top-0 h-96 w-[800px] -translate-x-1/2 rounded-full bg-sharks-blue/10 blur-3xl" />
+      <div className="absolute inset-0 bg-grid bg-grid-fade opacity-30" />
+      <div className="absolute left-1/2 top-0 h-96 w-[800px] -translate-x-1/2 rounded-full bg-sharks-blue/8 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}

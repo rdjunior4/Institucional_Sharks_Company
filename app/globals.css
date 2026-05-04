@@ -4,30 +4,30 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Sharks Company - Light Theme (Primary) */
-  --background: oklch(0.99 0.002 250);
-  --foreground: oklch(0.16 0.025 255);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.16 0.025 255);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.16 0.025 255);
+  /* Sharks Company - Dark Theme (Primary) */
+  --background: oklch(0.08 0.04 258); /* sharks-navy-deep */
+  --foreground: oklch(0.98 0.0 0);
+  --card: oklch(0.14 0.045 258); /* sharks-navy */
+  --card-foreground: oklch(0.98 0.0 0);
+  --popover: oklch(0.14 0.045 258);
+  --popover-foreground: oklch(0.98 0.0 0);
 
   /* Premium Blue */
   --primary: oklch(0.52 0.21 252);
   --primary-foreground: oklch(1 0 0);
 
   /* Deep Navy (Hero / Dark sections) */
-  --secondary: oklch(0.14 0.04 258);
-  --secondary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.20 0.05 258); /* sharks-navy-soft */
+  --secondary-foreground: oklch(0.98 0.0 0);
 
-  --muted: oklch(0.965 0.005 250);
-  --muted-foreground: oklch(0.46 0.018 250);
+  --muted: oklch(0.14 0.045 258);
+  --muted-foreground: oklch(0.60 0.01 250);
   --accent: oklch(0.52 0.21 252);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.92 0.005 250);
-  --input: oklch(0.92 0.005 250);
+  --border: oklch(0.20 0.05 258);
+  --input: oklch(0.20 0.05 258);
   --ring: oklch(0.52 0.21 252);
 
   /* Sharks brand tones — deeper, richer */

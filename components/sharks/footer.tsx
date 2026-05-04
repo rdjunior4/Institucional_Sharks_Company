@@ -36,9 +36,11 @@ export function Footer() {
             className="lg:col-span-5"
           >
             <Link href="#home" className="inline-flex items-center gap-2">
-              <span className="text-base font-semibold tracking-tight text-white">
-                Sharks<span className="text-sharks-blue-light">.</span>Company
-              </span>
+              <img 
+                src="http://sharkscompany.online/wp-content/uploads/2026/05/SHARKS-COMPANY-3D-e1777902632718.png" 
+                alt="Sharks Company" 
+                className="h-12 w-auto object-contain" 
+              />
             </Link>
             <p className="mt-4 max-w-md text-pretty text-sm leading-relaxed text-white/55">
               Marketing estratégico com método, execução e foco em desempenho real.
