@@ -120,7 +120,7 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-16 flex flex-col items-center justify-center gap-3 border-t border-white/[0.06] pt-8 text-center sm:flex-row sm:justify-between sm:text-left"
+          className="mt-16 border-t border-white/[0.06] pt-8 text-center"
         >
           <p className="text-xs text-white/40">
             &copy; {new Date().getFullYear()} Sharks Company. Todos os direitos reservados.
