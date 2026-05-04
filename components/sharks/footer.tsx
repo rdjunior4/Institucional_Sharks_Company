@@ -26,14 +26,14 @@ export function Footer() {
       <div className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[800px] -translate-x-1/2 rounded-full bg-sharks-blue/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-12">
+        <div className="grid gap-12 text-center lg:grid-cols-12 lg:text-left">
           {/* Logo & Description */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-5"
+            className="flex flex-col items-center lg:col-span-5 lg:items-start"
           >
             <Link href="#home" className="inline-flex items-center gap-2">
               <img 
@@ -42,7 +42,7 @@ export function Footer() {
                 className="h-12 w-auto object-contain" 
               />
             </Link>
-            <p className="mt-4 max-w-md text-pretty text-sm leading-relaxed text-white/55">
+            <p className="mt-4 max-w-md text-pretty text-sm leading-relaxed text-white/55 text-center lg:text-left">
               Marketing estratégico com método, execução e foco em desempenho real.
               Fortalecemos marcas, impulsionamos vendas e construímos resultados consistentes.
             </p>
@@ -68,7 +68,7 @@ export function Footer() {
             <h3 className="text-[11px] font-semibold uppercase tracking-wider text-white/45">
               Navegação
             </h3>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-4 flex flex-col items-center space-y-2.5 lg:items-start">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -93,7 +93,7 @@ export function Footer() {
             <h3 className="text-[11px] font-semibold uppercase tracking-wider text-white/45">
               Canais
             </h3>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-4 flex flex-col items-center space-y-2.5 lg:items-start">
               {socialLinks.map((link) => {
                 const Icon = link.icon
                 return (
@@ -120,14 +120,12 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-16 flex flex-col items-center justify-between gap-3 border-t border-white/[0.06] pt-8 sm:flex-row"
+          className="mt-16 flex flex-col items-center justify-center gap-3 border-t border-white/[0.06] pt-8 text-center sm:flex-row sm:justify-between sm:text-left"
         >
           <p className="text-xs text-white/40">
             &copy; {new Date().getFullYear()} Sharks Company. Todos os direitos reservados.
           </p>
-          <p className="text-xs text-white/40">
-            Marketing com método, execução e desempenho.
-          </p>
+
         </motion.div>
       </div>
     </footer>

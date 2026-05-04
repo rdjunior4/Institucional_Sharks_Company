@@ -102,7 +102,7 @@
 }
 
 .sharks-gradient-text {
-  background: linear-gradient(120deg, var(--sharks-blue-light) 0%, var(--sharks-blue) 60%, var(--sharks-blue-dark) 100%);
+  background: linear-gradient(90deg, var(--sharks-blue-light) 0%, var(--sharks-blue) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
