@@ -1,37 +1,33 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Manrope } from "next/font/google"
+import type { Metadata, Viewport } from "next"
+import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { LenisProvider } from "@/components/providers/lenis-provider"
 import "./globals.css"
 
-const manrope = Manrope({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
-  title: "Liquid Metal Buttons | Premium UI Components",
+  title: "Sharks Company | Marketing Estratégico com Foco em Desempenho Real",
   description:
-    "A collection of premium button components featuring animated liquid metal borders powered by Paper Shaders.",
+    "Agência de marketing estratégico que une método, execução e análise para fortalecer marcas, impulsionar vendas e gerar desempenho real.",
   generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+  keywords: ["marketing estratégico", "agência de marketing", "branding", "performance", "vendas", "crescimento"],
+  authors: [{ name: "Sharks Company" }],
+  openGraph: {
+    title: "Sharks Company | Marketing Estratégico com Foco em Desempenho Real",
+    description: "Agência de marketing estratégico que une método, execução e análise para fortalecer marcas.",
+    type: "website",
+    locale: "pt_BR",
   },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#3b82f6",
 }
 
 export default function RootLayout({
@@ -40,15 +36,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Instrument+Sans:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={`${manrope.variable} font-sans antialiased bg-zinc-950 text-zinc-100`}>
-        <LenisProvider>{children}</LenisProvider>
+    <html lang="pt-BR" className="bg-background">
+      <body className={`${inter.variable} font-sans antialiased`}>
+        {children}
         <Analytics />
       </body>
     </html>

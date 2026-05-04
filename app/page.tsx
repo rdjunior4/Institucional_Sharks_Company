@@ -1,23 +1,56 @@
-import { Navbar } from "@/components/ui/navbar"
-import { HeroSection } from "@/components/sections/hero-section"
-import { ImpactSection } from "@/components/sections/impact-section"
-import { FeaturesSection } from "@/components/sections/features-section"
-import { TestimonialsSection } from "@/components/sections/testimonials-section"
-import { PricingSection } from "@/components/sections/pricing-section"
-import { CtaSection } from "@/components/sections/cta-section"
-import { FooterSection } from "@/components/sections/footer-section"
+import { Header } from "@/components/sharks/header"
+import { HeroSection } from "@/components/sharks/hero-section"
+import { SharkFinTransition } from "@/components/sharks/shark-fin-transition"
+import { AboutSection } from "@/components/sharks/about-section"
+import { SolutionsSection } from "@/components/sharks/solutions-section"
+import { MethodSection } from "@/components/sharks/method-section"
+import { CasesSection } from "@/components/sharks/cases-section"
+import { FinalCTASection } from "@/components/sharks/final-cta-section"
+import { ContactSection } from "@/components/sharks/contact-section"
+import { Footer } from "@/components/sharks/footer"
 
-export default function Home() {
+export default function SharksCompanyPage() {
   return (
-    <main className="min-h-screen bg-zinc-950">
-      <Navbar />
+    <main className="min-h-screen">
+      <Header />
+      
+      {/* Hero Section */}
       <HeroSection />
-      <ImpactSection />
-      <FeaturesSection />
-      <TestimonialsSection />
-      <PricingSection />
-      <CtaSection />
-      <FooterSection />
+      
+      {/* Transition */}
+      <SharkFinTransition />
+      
+      {/* About Section */}
+      <AboutSection />
+      
+      {/* Transition */}
+      <SharkFinTransition />
+      
+      {/* Solutions Section */}
+      <SolutionsSection />
+      
+      {/* Transition */}
+      <div className="bg-background">
+        <SharkFinTransition />
+      </div>
+      
+      {/* Method Section */}
+      <MethodSection />
+      
+      {/* Transition */}
+      <SharkFinTransition />
+      
+      {/* Cases Section */}
+      <CasesSection />
+      
+      {/* Final CTA */}
+      <FinalCTASection />
+      
+      {/* Contact Section */}
+      <ContactSection />
+      
+      {/* Footer */}
+      <Footer />
     </main>
   )
 }
