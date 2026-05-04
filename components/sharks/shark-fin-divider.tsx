@@ -21,12 +21,13 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
       <div className="absolute bottom-[28%] left-0 right-0 h-px">
         {/* Base line — very subtle */}
         <div className="absolute inset-0 bg-white/[0.06]" />
-        {/* Animated glow sweep on the line */}
+        {/* Full-width glowing line with growing effect */}
         <motion.div
-          className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-transparent via-sharks-blue-light/20 to-transparent"
-          initial={{ x: "100%" }}
-          animate={shouldAnimate ? { x: "-200%" } : {}}
-          transition={{ duration: duration * 1.2, ease: "easeInOut", delay: 0.2 }}
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-sharks-blue-light/90 to-transparent shadow-[0_0_15px_2px_rgba(91,156,246,0.5)]"
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={shouldAnimate ? { scaleX: 1, opacity: 1 } : {}}
+          transition={{ duration: duration * 0.8, ease: "easeOut", delay: 0.1 }}
+          style={{ transformOrigin: "center" }}
         />
       </div>
 
@@ -44,16 +45,7 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
           opacity: { duration: 0.4, ease: "easeOut" },
         }}
       >
-        {/* Wake / trail behind fin */}
-        <motion.div
-          className="absolute -right-32 bottom-0 h-px w-32"
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={shouldAnimate ? { opacity: 1, scaleX: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          style={{ transformOrigin: "left" }}
-        >
-          <div className="h-full w-full bg-gradient-to-r from-sharks-blue-light/30 to-transparent" />
-        </motion.div>
+
 
         {/* Ripple ring 1 */}
         <motion.div

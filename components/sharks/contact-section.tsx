@@ -113,7 +113,7 @@ export function ContactSection() {
               className="mt-8"
             >
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5581989758872"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2.5 rounded-lg bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-[#1FB855] hover:shadow-lg hover:shadow-[#25D366]/25"
@@ -139,7 +139,7 @@ export function ContactSection() {
                     E-mail
                   </p>
                   <p className="mt-0.5 text-sm font-medium text-foreground">
-                    contato@sharkscompany.com
+                    contato@sharkscompany.online
                   </p>
                 </div>
               </div>

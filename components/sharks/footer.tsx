@@ -13,9 +13,9 @@ const quickLinks = [
 ]
 
 const socialLinks = [
-  { label: "WhatsApp", href: "https://wa.me/5500000000000", icon: MessageCircle },
-  { label: "E-mail", href: "mailto:contato@sharkscompany.com", icon: Mail },
-  { label: "Instagram", href: "https://instagram.com/sharkscompany", icon: Instagram },
+  { label: "WhatsApp", href: "https://wa.me/5581989758872", icon: MessageCircle },
+  { label: "E-mail", href: "mailto:contato@sharkscompany.online", icon: Mail },
+  { label: "Instagram", href: "https://instagram.com/sharkscompany1", icon: Instagram },
 ]
 
 export function Footer() {
