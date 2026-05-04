@@ -22,6 +22,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
   },
+  icons: {
+    icon: "http://sharkscompany.online/wp-content/uploads/2026/05/SIMBOLO-SHARKS-COMPANY-3D-e1777920291363.png",
+    apple: "http://sharkscompany.online/wp-content/uploads/2026/05/SIMBOLO-SHARKS-COMPANY-3D-e1777920291363.png",
+  },
 }
 
 export const viewport: Viewport = {
