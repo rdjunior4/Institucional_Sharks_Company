@@ -13,44 +13,20 @@ export default function SharksCompanyPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      
-      {/* Hero Section */}
       <HeroSection />
-      
-      {/* Transition */}
-      <SharkFinTransition />
-      
-      {/* About Section */}
+      <SharkFinTransition variant="dark-to-light" />
       <AboutSection />
-      
-      {/* Transition */}
-      <SharkFinTransition />
-      
-      {/* Solutions Section */}
+      <SharkFinTransition variant="light-to-dark" />
       <SolutionsSection />
-      
-      {/* Transition */}
-      <div className="bg-background">
-        <SharkFinTransition />
-      </div>
-      
-      {/* Method Section */}
+      <SharkFinTransition variant="dark-to-light" />
       <MethodSection />
-      
-      {/* Transition */}
-      <SharkFinTransition />
-      
-      {/* Cases Section */}
       <CasesSection />
-      
-      {/* Final CTA */}
+      <SharkFinTransition variant="light-to-dark" />
       <FinalCTASection />
-      
-      {/* Contact Section */}
       <ContactSection />
-      
-      {/* Footer */}
       <Footer />
     </main>
   )
 }
+</content>
+<parameter name="taskNameActive">Updating page

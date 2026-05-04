@@ -5,61 +5,42 @@
 
 :root {
   /* Sharks Company - Light Theme (Primary) */
-  --background: oklch(0.98 0 0);
-  --foreground: oklch(0.15 0 0);
+  --background: oklch(0.99 0.002 250);
+  --foreground: oklch(0.16 0.025 255);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0 0);
+  --card-foreground: oklch(0.16 0.025 255);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0 0);
-  
+  --popover-foreground: oklch(0.16 0.025 255);
+
   /* Premium Blue */
-  --primary: oklch(0.55 0.2 250);
+  --primary: oklch(0.52 0.21 252);
   --primary-foreground: oklch(1 0 0);
-  
-  /* Graphite/Dark */
-  --secondary: oklch(0.18 0 0);
+
+  /* Deep Navy (Hero / Dark sections) */
+  --secondary: oklch(0.14 0.04 258);
   --secondary-foreground: oklch(0.98 0 0);
-  
-  --muted: oklch(0.95 0 0);
-  --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.55 0.2 250);
+
+  --muted: oklch(0.965 0.005 250);
+  --muted-foreground: oklch(0.46 0.018 250);
+  --accent: oklch(0.52 0.21 252);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.90 0 0);
-  --input: oklch(0.90 0 0);
-  --ring: oklch(0.55 0.2 250);
-  
-  /* Sharks Blue tones */
-  --sharks-blue: oklch(0.55 0.2 250);
-  --sharks-blue-light: oklch(0.70 0.15 250);
-  --sharks-blue-dark: oklch(0.40 0.22 250);
-  --sharks-graphite: oklch(0.18 0 0);
-  --sharks-graphite-light: oklch(0.25 0 0);
-  
-  --radius: 0.5rem;
-}
+  --border: oklch(0.92 0.005 250);
+  --input: oklch(0.92 0.005 250);
+  --ring: oklch(0.52 0.21 252);
 
-.dark {
-  --background: oklch(0.12 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.15 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.15 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.60 0.2 250);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.25 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.20 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.60 0.2 250);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.50 0.2 27);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.25 0 0);
-  --input: oklch(0.25 0 0);
-  --ring: oklch(0.60 0.2 250);
+  /* Sharks brand tones — deeper, richer */
+  --sharks-navy: oklch(0.14 0.045 258);
+  --sharks-navy-deep: oklch(0.08 0.04 258);
+  --sharks-navy-darker: oklch(0.05 0.03 258);
+  --sharks-navy-soft: oklch(0.20 0.05 258);
+  --sharks-blue: oklch(0.55 0.21 252);
+  --sharks-blue-light: oklch(0.72 0.16 248);
+  --sharks-blue-dark: oklch(0.40 0.22 254);
+  --sharks-graphite: oklch(0.22 0.012 250);
+
+  --radius: 0.625rem;
 }
 
 @theme inline {
@@ -85,11 +66,14 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-sharks-navy: var(--sharks-navy);
+  --color-sharks-navy-deep: var(--sharks-navy-deep);
+  --color-sharks-navy-darker: var(--sharks-navy-darker);
+  --color-sharks-navy-soft: var(--sharks-navy-soft);
   --color-sharks-blue: var(--sharks-blue);
   --color-sharks-blue-light: var(--sharks-blue-light);
   --color-sharks-blue-dark: var(--sharks-blue-dark);
   --color-sharks-graphite: var(--sharks-graphite);
-  --color-sharks-graphite-light: var(--sharks-graphite-light);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -101,17 +85,24 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.025em;
+    font-feature-settings: "ss01", "cv11";
   }
 }
 
-/* Sharks Company Custom Styles */
+/* Sharks Company brand utilities */
 .sharks-gradient {
   background: linear-gradient(135deg, var(--sharks-blue) 0%, var(--sharks-blue-dark) 100%);
 }
 
 .sharks-gradient-text {
-  background: linear-gradient(135deg, var(--sharks-blue) 0%, var(--sharks-blue-light) 100%);
+  background: linear-gradient(120deg, var(--sharks-blue-light) 0%, var(--sharks-blue) 60%, var(--sharks-blue-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -125,17 +116,50 @@
   box-shadow: 0 0 60px rgba(59, 130, 246, 0.25);
 }
 
-/* Glass effect */
+/* Premium dark hero background — deeper navy */
+.bg-sharks-hero {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, oklch(0.28 0.18 252 / 0.40), transparent 60%),
+    radial-gradient(ellipse 50% 50% at 100% 100%, oklch(0.30 0.20 250 / 0.22), transparent 50%),
+    radial-gradient(ellipse 40% 40% at 0% 50%, oklch(0.30 0.18 252 / 0.18), transparent 55%),
+    linear-gradient(180deg, oklch(0.07 0.035 258) 0%, oklch(0.05 0.03 258) 100%);
+}
+
+.bg-sharks-deep {
+  background: linear-gradient(180deg, var(--sharks-navy-deep) 0%, var(--sharks-navy-darker) 100%);
+}
+
+/* Subtle grid background */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-grid-light {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-grid-fade {
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 75%);
+}
+
+/* Glass effects */
 .glass {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
 }
 
 .glass-dark {
-  background: rgba(15, 15, 15, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(5, 8, 18, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 /* Hide scrollbar */
@@ -155,10 +179,46 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Selection color */
+/* Selection */
 ::selection {
   background: rgba(59, 130, 246, 0.3);
   color: inherit;
+}
+
+/* Section eyebrow label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.eyebrow-light {
+  color: var(--sharks-blue-light);
+}
+
+/* Subtle noise texture for hero */
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.5;
+  pointer-events: none;
+  mix-blend-mode: overlay;
 }
 
 /* Reduced motion */

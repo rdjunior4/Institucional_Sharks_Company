@@ -6,11 +6,11 @@ import { Menu, X } from "lucide-react"
 import Link from "next/link"
 
 const navItems = [
-  { label: "Home", href: "#home" },
   { label: "Sobre", href: "#sobre" },
-  { label: "Soluções Sharks", href: "#solucoes" },
+  { label: "Soluções", href: "#solucoes" },
   { label: "Método", href: "#metodo" },
   { label: "Cases", href: "#cases" },
+  { label: "Contato", href: "#contato" },
 ]
 
 export function Header() {
@@ -19,9 +19,9 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      setIsScrolled(window.scrollY > 40)
     }
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -30,75 +30,72 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "glass border-b border-border/50 shadow-sm"
-          : "bg-transparent"
+          ? "border-b border-white/10 glass-dark"
+          : "border-b border-transparent bg-transparent"
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between lg:h-20">
+        <div className="flex h-16 items-center justify-between lg:h-[72px]">
           {/* Logo */}
           <Link href="#home" className="flex items-center gap-2">
-            <img
-              src="http://sharkscompany.online/wp-content/uploads/2026/05/SHARKS-COMPANY-3D-e1777902632718.png"
-              alt="Sharks Company Logo"
-              className="h-8 w-auto sm:h-10"
-            />
+            <span className="text-base font-semibold tracking-tight text-white">
+              Sharks<span className="text-sharks-blue-light">.</span>Company
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:gap-8">
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex lg:items-center lg:gap-1 lg:rounded-full lg:border lg:border-white/10 lg:bg-white/[0.03] lg:px-1.5 lg:py-1.5 lg:backdrop-blur-sm">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                className="rounded-full px-3.5 py-1.5 text-[13px] font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          {/* CTA Button - Desktop */}
+          {/* CTA */}
           <div className="hidden lg:block">
             <Link
               href="#contato"
-              className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25"
+              className="inline-flex items-center justify-center rounded-lg bg-white px-4 py-2 text-[13px] font-semibold text-sharks-navy transition-all hover:bg-white/90 hover:shadow-lg hover:shadow-sharks-blue/20"
             >
-              Diagnóstico Gratuito
+              Diagnóstico gratuito
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="rounded-md p-2 text-white lg:hidden"
             aria-label="Menu"
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden glass border-t border-border/50"
+            transition={{ duration: 0.25 }}
+            className="border-t border-white/10 glass-dark lg:hidden"
           >
             <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-1">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-base font-medium text-foreground/80 transition-colors hover:text-primary"
+                    className="rounded-md px-3 py-2.5 text-sm font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -106,9 +103,9 @@ export function Header() {
                 <Link
                   href="#contato"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-2 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90"
+                  className="mt-2 inline-flex items-center justify-center rounded-lg bg-white px-4 py-3 text-sm font-semibold text-sharks-navy transition-all hover:bg-white/90"
                 >
-                  Diagnóstico Gratuito
+                  Diagnóstico gratuito
                 </Link>
               </div>
             </div>
@@ -118,3 +115,5 @@ export function Header() {
     </motion.header>
   )
 }
+</content>
+<parameter name="taskNameActive">Refining header

@@ -1,10 +1,31 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import { Compass, Target, BarChart3, Sparkles } from "lucide-react"
 
-const tags = ["Estratégia", "Marca", "Vendas", "Crescimento"]
+const pillars = [
+  {
+    icon: Compass,
+    label: "Estratégia",
+    description: "Direção clara antes de toda execução.",
+  },
+  {
+    icon: Sparkles,
+    label: "Marca",
+    description: "Identidade que comunica valor.",
+  },
+  {
+    icon: Target,
+    label: "Vendas",
+    description: "Marketing conectado ao comercial.",
+  },
+  {
+    icon: BarChart3,
+    label: "Crescimento",
+    description: "Decisões orientadas por dados.",
+  },
+]
 
 export function AboutSection() {
   const ref = useRef(null)
@@ -14,159 +35,109 @@ export function AboutSection() {
     <section
       id="sobre"
       ref={ref}
-      className="relative overflow-hidden bg-secondary py-20 lg:py-32"
+      className="relative overflow-hidden bg-background py-24 lg:py-32"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Shark Fin Watermark */}
-        <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.03]">
-          <img
-            src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-4-de-mai.-de-2026-09_17_33-e1777902770956.png"
-            alt=""
-            className="h-auto w-[500px]"
-            aria-hidden="true"
-          />
-        </div>
-
-        {/* Direction Lines */}
-        <svg
-          className="absolute left-0 top-1/4 h-[400px] w-full opacity-[0.05]"
-          viewBox="0 0 1200 400"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 200 Q 300 100 600 200 T 1200 200"
-            stroke="currentColor"
-            strokeWidth="2"
-            fill="none"
-            className="text-primary"
-          />
-          <path
-            d="M0 250 Q 350 150 700 250 T 1200 250"
-            stroke="currentColor"
-            strokeWidth="1"
-            fill="none"
-            className="text-primary"
-          />
-        </svg>
-      </div>
+      <div className="bg-grid-light pointer-events-none absolute inset-0 opacity-50" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Content */}
-          <div>
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-12">
+          {/* Left: heading */}
+          <div className="lg:col-span-5">
             <motion.span
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest text-primary"
+              transition={{ duration: 0.5 }}
+              className="eyebrow"
             >
               Sobre a Sharks Company
             </motion.span>
 
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-balance text-3xl font-bold leading-tight text-secondary-foreground sm:text-4xl lg:text-5xl"
+              transition={{ duration: 0.6, delay: 0.05 }}
+              className="mt-5 text-balance text-3xl font-semibold leading-[1.1] text-foreground sm:text-4xl lg:text-[2.75rem]"
             >
-              Uma agência de marketing para negócios que querem{" "}
-              <span className="sharks-gradient-text">crescer</span> e se posicionar com{" "}
-              <span className="sharks-gradient-text">força</span>.
+              Uma agência para quem quer{" "}
+              <span className="sharks-gradient-text">crescer</span> com força e direção.
             </motion.h2>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mt-6 max-w-md text-pretty text-[15px] leading-relaxed text-muted-foreground"
+            >
+              Marketing não é apenas presença digital — é uma ferramenta para competir,
+              vender mais e ganhar relevância. Unimos estratégia, IA, análise, criação e
+              execução para impulsionar marcas que querem desempenho real.
+            </motion.p>
+
+            <motion.blockquote
+              initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-6 text-pretty text-lg leading-relaxed text-secondary-foreground/70"
-            >
-              A Sharks Company nasceu para ser a parceira estratégica de empresários que
-              entendem que marketing não é apenas presença digital, mas uma ferramenta
-              essencial para competir, vender mais e ganhar relevância no mercado.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-4 text-pretty text-lg leading-relaxed text-secondary-foreground/70"
-            >
-              Unimos estratégia, tecnologias com IA, análise de mercado, criação e execução
-              para impulsionar marcas que desejam crescer com direção, consistência e
-              desempenho real.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-6 text-pretty text-xl font-semibold italic text-primary"
+              className="mt-8 border-l-2 border-primary/60 pl-4 text-[15px] font-medium italic leading-relaxed text-foreground/80"
             >
               Para negócios que querem nadar em águas maiores e se tornar grandes tubarões
               no mercado.
-            </motion.p>
+            </motion.blockquote>
+          </div>
 
-            {/* Tags */}
+          {/* Right: pillars grid */}
+          <div className="lg:col-span-7">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {pillars.map((pillar, index) => {
+                const Icon = pillar.icon
+                return (
+                  <motion.div
+                    key={pillar.label}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.5, delay: 0.15 + index * 0.08 }}
+                    className="group relative overflow-hidden rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/40 hover:shadow-md hover:shadow-primary/5"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="mt-4 text-base font-semibold tracking-tight text-foreground">
+                      {pillar.label}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {pillar.description}
+                    </p>
+                  </motion.div>
+                )
+              })}
+            </div>
+
+            {/* Stats strip */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-8 flex flex-wrap gap-3"
+              className="mt-3 grid grid-cols-3 divide-x divide-border rounded-xl border border-border bg-card"
             >
-              {tags.map((tag, index) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-sm font-medium text-primary"
-                >
-                  {tag}
-                </span>
+              {[
+                { value: "50+", label: "Marcas atendidas" },
+                { value: "5+", label: "Anos de experiência" },
+                { value: "100%", label: "Foco em performance" },
+              ].map((stat) => (
+                <div key={stat.label} className="px-4 py-5 text-center">
+                  <p className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+                    {stat.label}
+                  </p>
+                </div>
               ))}
             </motion.div>
           </div>
-
-          {/* Visual Element */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex items-center justify-center"
-          >
-            <div className="relative">
-              {/* Glow Effect */}
-              <div className="absolute -inset-4 rounded-full bg-primary/10 blur-3xl" />
-
-              {/* Symbol Container */}
-              <div className="relative rounded-2xl border border-primary/20 bg-secondary-foreground/5 p-8 backdrop-blur-sm lg:p-12">
-                <img
-                  src="http://sharkscompany.online/wp-content/uploads/2026/05/ChatGPT-Image-4-de-mai.-de-2026-09_17_33-e1777902770956.png"
-                  alt="Sharks Company Symbol"
-                  className="h-auto w-48 lg:w-64"
-                />
-
-                {/* Floating Stats */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -right-4 -top-4 rounded-lg border border-primary/20 bg-secondary p-3 shadow-lg"
-                >
-                  <p className="text-xs text-secondary-foreground/60">Clientes atendidos</p>
-                  <p className="text-xl font-bold text-primary">50+</p>
-                </motion.div>
-
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-4 -left-4 rounded-lg border border-primary/20 bg-secondary p-3 shadow-lg"
-                >
-                  <p className="text-xs text-secondary-foreground/60">Anos de experiência</p>
-                  <p className="text-xl font-bold text-primary">5+</p>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
   )
 }
+</content>
+<parameter name="taskNameActive">Refining about section
