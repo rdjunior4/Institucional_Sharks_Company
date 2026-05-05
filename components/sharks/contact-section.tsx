@@ -74,98 +74,35 @@ export function ContactSection() {
       <div className="absolute inset-0 bg-grid bg-grid-fade opacity-20" />
       <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-sharks-blue/5 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
-          {/* Left - Info */}
-          <div className="lg:col-span-5">
-            <motion.span
-              initial={{ opacity: 0, y: 12 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5 }}
-              className="eyebrow"
-            >
-              Contato
-            </motion.span>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 12 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.05 }}
-              className="mt-5 text-balance text-3xl font-semibold leading-[1.1] text-foreground sm:text-4xl lg:text-[2.5rem]"
-            >
-              Fale com a <span className="sharks-gradient-text">Sharks</span>
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-5 max-w-md text-pretty text-[15px] leading-relaxed text-muted-foreground"
-            >
-              Preencha os dados ao lado ou entre em contato direto pelos canais abaixo. Nosso
-              time retorna em até 24h úteis.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="mt-8"
-            >
-              <a
-                href="https://wa.me/5581989758872"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 rounded-lg bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-[#1FB855] hover:shadow-lg hover:shadow-[#25D366]/25"
-              >
-                <MessageCircle className="h-4 w-4" />
-                Falar no WhatsApp
-              </a>
-            </motion.div>
-
-            {/* Channels */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-10 space-y-4 border-t border-border pt-8"
-            >
-              <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <Mail className="h-4 w-4 text-primary" />
-                </div>
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                    E-mail
-                  </p>
-                  <p className="mt-0.5 text-sm font-medium text-foreground">
-                    contato@sharkscompany.online
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <MapPin className="h-4 w-4 text-primary" />
-                </div>
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                    Atendimento
-                  </p>
-                  <p className="mt-0.5 text-sm font-medium text-foreground">
-                    100% remoto — todo o Brasil
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right - Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
+      <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        {/* Header Info */}
+        <div className="mb-12 flex flex-col items-center">
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-7"
+            transition={{ duration: 0.5 }}
+            className="eyebrow"
           >
+            Contato
+          </motion.span>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="mt-5 text-balance text-3xl font-semibold leading-[1.1] text-foreground sm:text-4xl lg:text-[2.5rem]"
+          >
+            Fale com a <span className="sharks-gradient-text">Sharks</span>
+          </motion.h2>
+        </div>
+
+        {/* Centered Form */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="w-full text-left"
+        >
             <div className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
               {isSubmitted ? (
                 <motion.div
@@ -328,7 +265,6 @@ export function ContactSection() {
               )}
             </div>
           </motion.div>
-        </div>
       </div>
     </section>
   )

@@ -2,6 +2,7 @@
 
 import { motion, useInView, useReducedMotion } from "framer-motion"
 import { useRef } from "react"
+import { Crosshair, TrendingUp, DollarSign } from "lucide-react"
 
 export function SharkFinDivider({ large = false }: { large?: boolean }) {
   const ref = useRef(null)
@@ -11,11 +12,14 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
   const shouldAnimate = isInView && !prefersReducedMotion
   const duration = 2.0
 
+  // Popups appear after fin settles (slide 2s + stabilize buffer)
+  const popupBaseDelay = duration + 0.8
+
   return (
     <div className="relative z-20 w-full" aria-hidden="true">
       <div
         ref={ref}
-        className={`pointer-events-none absolute bottom-0 left-0 right-0 translate-y-[28%] overflow-hidden ${large ? "h-[100px] sm:h-[140px] lg:h-[200px]" : "h-[80px] sm:h-[100px] lg:h-[140px]"}`}
+        className={`pointer-events-none absolute bottom-0 left-0 right-0 translate-y-[28%] ${large ? "overflow-visible" : "overflow-hidden"} ${large ? "h-[100px] sm:h-[140px] lg:h-[200px]" : "h-[80px] sm:h-[100px] lg:h-[140px]"}`}
       >
       {/* Surface / trail line */}
       <div className="absolute bottom-[28%] left-0 right-0 h-px">
@@ -133,6 +137,110 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
             className={`${large ? "h-[64px] sm:h-[80px] lg:h-[120px]" : "h-[48px] sm:h-[64px] lg:h-[80px]"} w-auto drop-shadow-[0_0_15px_rgba(91,156,246,0.3)]`}
           />
         </motion.div>
+
+        {/* === Floating info popups — only on the first (large) divider === */}
+        {large && (
+          <>
+            {/* +Desempenho — top center, above the fin */}
+            <motion.div
+              className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5 rounded-md border border-sharks-blue-light/20 bg-[#0a1628]/70 px-2.5 py-1 backdrop-blur-sm shadow-[0_0_10px_rgba(91,156,246,0.08)]"
+              style={{ top: "-14px" }}
+              initial={{ opacity: 0, y: 6, scale: 0.92 }}
+              animate={
+                shouldAnimate
+                  ? {
+                      opacity: 1,
+                      y: [6, 0, -0.6, 0, -0.4, 0],
+                      scale: 1,
+                    }
+                  : {}
+              }
+              transition={{
+                opacity: { duration: 0.55, delay: popupBaseDelay, ease: "easeOut" },
+                scale: { duration: 0.55, delay: popupBaseDelay, ease: [0.25, 0.1, 0.25, 1] },
+                y: {
+                  duration: 4.5,
+                  delay: popupBaseDelay,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  times: [0, 0.12, 0.4, 0.55, 0.78, 1],
+                },
+              }}
+            >
+              <TrendingUp className="h-3 w-3 text-sharks-blue-light/70" />
+              <span className="text-[10px] font-medium tracking-wide text-white/80 sm:text-[11px]">
+                +Desempenho
+              </span>
+            </motion.div>
+
+            {/* Shark Mind — left of the fin */}
+            <motion.div
+              className="absolute flex items-center gap-1.5 rounded-md border border-sharks-blue-light/20 bg-[#0a1628]/70 px-2.5 py-1 backdrop-blur-sm shadow-[0_0_10px_rgba(91,156,246,0.08)]"
+              style={{ top: "20px", right: "calc(100% + 3px)" }}
+              initial={{ opacity: 0, y: 6, scale: 0.92 }}
+              animate={
+                shouldAnimate
+                  ? {
+                      opacity: 1,
+                      y: [6, 0, -0.5, 0, -0.7, 0],
+                      scale: 1,
+                    }
+                  : {}
+              }
+              transition={{
+                opacity: { duration: 0.55, delay: popupBaseDelay + 0.15, ease: "easeOut" },
+                scale: { duration: 0.55, delay: popupBaseDelay + 0.15, ease: [0.25, 0.1, 0.25, 1] },
+                y: {
+                  duration: 5,
+                  delay: popupBaseDelay + 0.15,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  times: [0, 0.12, 0.4, 0.55, 0.78, 1],
+                },
+              }}
+            >
+              <Crosshair className="h-3 w-3 text-sharks-blue-light/70" />
+              <span className="text-[10px] font-medium tracking-wide text-white/80 whitespace-nowrap sm:text-[11px]">
+                Shark Mind
+              </span>
+            </motion.div>
+
+            {/* R$ Resultado — right of the fin */}
+            <motion.div
+              className="absolute flex items-center gap-1.5 rounded-md border border-sharks-blue-light/20 bg-[#0a1628]/70 px-2.5 py-1 backdrop-blur-sm shadow-[0_0_10px_rgba(91,156,246,0.08)]"
+              style={{ top: "20px", left: "calc(100% + 3px)" }}
+              initial={{ opacity: 0, y: 6, scale: 0.92 }}
+              animate={
+                shouldAnimate
+                  ? {
+                      opacity: 1,
+                      y: [6, 0, -0.5, 0, -0.3, 0],
+                      scale: 1,
+                    }
+                  : {}
+              }
+              transition={{
+                opacity: { duration: 0.55, delay: popupBaseDelay + 0.3, ease: "easeOut" },
+                scale: { duration: 0.55, delay: popupBaseDelay + 0.3, ease: [0.25, 0.1, 0.25, 1] },
+                y: {
+                  duration: 4.8,
+                  delay: popupBaseDelay + 0.3,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  times: [0, 0.12, 0.4, 0.55, 0.78, 1],
+                },
+              }}
+            >
+              <DollarSign className="h-3 w-3 text-sharks-blue-light/70" />
+              <span className="text-[10px] font-medium tracking-wide text-white/80 whitespace-nowrap sm:text-[11px]">
+                R$ Resultado
+              </span>
+            </motion.div>
+          </>
+        )}
       </motion.div>
       </div>
     </div>
