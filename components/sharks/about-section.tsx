@@ -2,30 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { Compass, Target, BarChart3, Sparkles } from "lucide-react"
 
-const pillars = [
-  {
-    icon: Compass,
-    label: "Estratégia",
-    description: "Direção clara antes de toda execução.",
-  },
-  {
-    icon: Sparkles,
-    label: "Marca",
-    description: "Identidade que comunica valor.",
-  },
-  {
-    icon: Target,
-    label: "Vendas",
-    description: "Marketing conectado ao comercial.",
-  },
-  {
-    icon: BarChart3,
-    label: "Crescimento",
-    description: "Decisões orientadas por dados.",
-  },
-]
 
 export function AboutSection() {
   const ref = useRef(null)
@@ -86,54 +63,32 @@ export function AboutSection() {
             </motion.blockquote>
           </div>
 
-          {/* Right: pillars grid */}
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {pillars.map((pillar, index) => {
-                const Icon = pillar.icon
-                return (
-                  <motion.div
-                    key={pillar.label}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.15 + index * 0.08 }}
-                    className="group relative overflow-hidden rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/40 hover:shadow-md hover:shadow-primary/5"
-                  >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="mt-4 text-base font-semibold tracking-tight text-foreground">
-                      {pillar.label}
-                    </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                      {pillar.description}
-                    </p>
-                  </motion.div>
-                )
-              })}
-            </div>
-
-            {/* Stats strip */}
+          {/* Right: shark art */}
+          <div className="lg:col-span-7 flex items-end justify-center lg:justify-end">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-3 grid grid-cols-3 divide-x divide-border rounded-xl border border-border bg-card"
+              initial={{ opacity: 0, x: 20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="relative w-full max-w-[680px] -mb-24 lg:-mb-32"
             >
-              {[
-                { value: "50+", label: "Marcas atendidas" },
-                { value: "5+", label: "Anos de experiência" },
-                { value: "100%", label: "Foco em performance" },
-              ].map((stat) => (
-                <div key={stat.label} className="px-4 py-5 text-center">
-                  <p className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+              {/* Blue neon glow behind characters */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-[80%] h-[65%] rounded-full bg-sharks-blue/35 blur-[90px]" />
+              </div>
+              <div className="absolute inset-x-0 top-1/4 h-[55%] rounded-full bg-sharks-blue-light/20 blur-[110px] pointer-events-none" />
+
+              {/* Image with bottom fade via CSS mask */}
+              <div className="relative">
+                <img
+                  src="http://sharkscompany.online/wp-content/uploads/2026/05/Design-sem-nome-9.png"
+                  alt="Sharks Company Art"
+                  className="relative z-10 w-full h-auto object-contain"
+                  style={{
+                    maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
+                    WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
+                  }}
+                />
+              </div>
             </motion.div>
           </div>
         </div>
