@@ -33,6 +33,7 @@ const faturamentos = [
 export function ContactSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     nome: "",
@@ -42,19 +43,38 @@ export function ContactSection() {
     faturamento: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({
-        nome: "",
-        whatsapp: "",
-        empresa: "",
-        segmento: "",
-        faturamento: "",
-      })
-    }, 3000)
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setTimeout(() => {
+          setIsSubmitted(false)
+          setFormData({
+            nome: "",
+            whatsapp: "",
+            empresa: "",
+            segmento: "",
+            faturamento: "",
+          })
+        }, 5000)
+      } else {
+        alert("Ocorreu um erro ao enviar. Por favor, tente novamente ou nos chame no WhatsApp.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Ocorreu um erro ao enviar. Por favor, tente novamente ou nos chame no WhatsApp.");
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (
@@ -301,10 +321,11 @@ export function ContactSection() {
                   {/* Submit */}
                   <button
                     type="submit"
-                    className="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25"
+                    disabled={isSubmitting}
+                    className="group flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    Enviar solicitação
-                    <Send className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                    {isSubmitting ? "Enviando..." : "Enviar solicitação"}
+                    {!isSubmitting && <Send className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />}
                   </button>
 
                   <p className="text-center text-[11px] text-muted-foreground">
