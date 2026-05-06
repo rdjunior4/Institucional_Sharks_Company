@@ -69,7 +69,7 @@ export function AboutSection() {
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative w-[115%] -ml-[7.5%] sm:w-full sm:ml-0 max-w-[680px] -mb-24 lg:-mb-32 mt-6 lg:mt-0"
+              className="relative w-full mx-auto sm:mx-0 max-w-[680px] -mb-24 lg:-mb-32 mt-6 lg:mt-0"
             >
               {/* Blue neon glow behind characters - Ajustado para mobile */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
