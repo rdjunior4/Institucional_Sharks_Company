@@ -69,13 +69,13 @@ export function AboutSection() {
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative w-full max-w-[680px] -mb-24 lg:-mb-32"
+              className="relative w-[115%] -ml-[7.5%] sm:w-full sm:ml-0 max-w-[680px] -mb-24 lg:-mb-32 mt-6 lg:mt-0"
             >
-              {/* Blue neon glow behind characters */}
+              {/* Blue neon glow behind characters - Ajustado para mobile */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-[80%] h-[65%] rounded-full bg-sharks-blue/35 blur-[90px]" />
+                <div className="w-[90%] h-[75%] lg:w-[80%] lg:h-[65%] rounded-full bg-sharks-blue/60 lg:bg-sharks-blue/35 blur-[50px] lg:blur-[90px]" />
               </div>
-              <div className="absolute inset-x-0 top-1/4 h-[55%] rounded-full bg-sharks-blue-light/20 blur-[110px] pointer-events-none" />
+              <div className="absolute inset-x-0 top-1/4 h-[65%] lg:h-[55%] rounded-full bg-sharks-blue-light/40 lg:bg-sharks-blue-light/20 blur-[60px] lg:blur-[110px] pointer-events-none" />
 
               {/* Image with bottom fade via CSS mask */}
               <div className="relative">

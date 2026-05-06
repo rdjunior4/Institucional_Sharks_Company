@@ -2,24 +2,28 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { MessageCircle, Send, CheckCircle, Mail, MapPin } from "lucide-react"
+import { MessageCircle, Send, CheckCircle, Mail, MapPin, FileText, Phone } from "lucide-react"
 
 const segmentos = [
   "Selecionar segmento",
-  "Tecnologia",
-  "Serviços",
-  "Varejo",
-  "Indústria",
-  "Saúde",
+  "Bares e Restaurantes",
+  "Distribuidora de Alimentos e Bebidas",
   "Educação",
   "Imobiliário",
-  "Alimentação",
+  "Indústria de Alimentos e Bebidas",
+  "Indústria (Outros)",
+  "Saúde",
+  "Serviços",
+  "Supermercado e Varejo Alimentar",
+  "Tecnologia",
+  "Varejo (Outros)",
   "Outro",
 ]
 
 const faturamentos = [
   "Selecionar faturamento",
-  "Até R$ 100 mil/mês",
+  "Até R$ 50 mil/mês",
+  "R$ 50 mil — R$ 100 mil/mês",
   "R$ 100 mil — R$ 500 mil/mês",
   "R$ 500 mil — R$ 1 milhão/mês",
   "R$ 1 milhão — R$ 5 milhões/mês",
@@ -73,36 +77,81 @@ export function ContactSection() {
       {/* Background */}
       <div className="absolute inset-0 bg-grid bg-grid-fade opacity-20" />
       <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-sharks-blue/5 blur-3xl" />
+      
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-16 lg:grid-cols-2 lg:gap-12 items-center">
+          {/* Left Side: Header & Steps */}
+          <div className="text-left">
+            <motion.span
+              initial={{ opacity: 0, y: 12 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5 }}
+              className="eyebrow"
+            >
+              Contato
+            </motion.span>
 
-      <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-        {/* Header Info */}
-        <div className="mb-12 flex flex-col items-center">
-          <motion.span
-            initial={{ opacity: 0, y: 12 }}
+            <motion.h2
+              initial={{ opacity: 0, y: 12 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.05 }}
+              className="mt-5 text-balance text-3xl font-semibold leading-[1.1] text-foreground sm:text-4xl lg:text-[2.5rem]"
+            >
+              Fale com a <span className="sharks-gradient-text">Sharks</span>
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mt-12 lg:mt-16"
+            >
+              <h3 className="mb-8 text-sm font-bold uppercase tracking-widest text-foreground">
+                Dar o próximo passo leva menos de 1 minuto
+              </h3>
+              
+              <div className="relative space-y-8">
+                {/* Linha vertical conectando as etapas */}
+                <div className="absolute bottom-[40px] left-[23px] top-[40px] w-px border-l-2 border-dashed border-border" />
+                
+                {/* Step 1 */}
+                <div className="relative flex gap-6">
+                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-sharks-blue/20 bg-[#0a1628] text-sharks-blue-light shadow-[0_0_15px_rgba(91,156,246,0.15)]">
+                    <FileText className="h-5 w-5" />
+                    <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-sharks-blue text-[10px] font-bold text-white">1</span>
+                  </div>
+                  <div className="pt-1">
+                    <h4 className="mb-1.5 text-base font-semibold text-foreground">Preencha o formulário</h4>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      Envie suas informações de contato. Todos os seus dados estarão seguros, vamos cuidar bem deles.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="relative flex gap-6">
+                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-emerald-500/20 bg-[#0a1628] text-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                    <Phone className="h-5 w-5" />
+                    <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] font-bold text-white">2</span>
+                  </div>
+                  <div className="pt-1">
+                    <h4 className="mb-1.5 text-base font-semibold text-foreground">Receba uma ligação</h4>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      Em até 12 horas, um especialista fará uma ligação para agendar a reunião mais importante com você.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Side: Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="eyebrow"
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="w-full lg:max-w-[520px] lg:ml-auto"
           >
-            Contato
-          </motion.span>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 12 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-5 text-balance text-3xl font-semibold leading-[1.1] text-foreground sm:text-4xl lg:text-[2.5rem]"
-          >
-            Fale com a <span className="sharks-gradient-text">Sharks</span>
-          </motion.h2>
-        </div>
-
-        {/* Centered Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="w-full text-left"
-        >
             <div className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
               {isSubmitted ? (
                 <motion.div
@@ -122,12 +171,12 @@ export function ContactSection() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <div>
+                  <div className="mb-6 text-center">
                     <h3 className="text-lg font-semibold tracking-tight text-foreground">
-                      Diagnóstico estratégico gratuito
+                      Suas informações
                     </h3>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Preencha os dados e nossa equipe entra em contato com você.
+                      Preencha os dados abaixo para continuarmos.
                     </p>
                   </div>
 
@@ -265,6 +314,7 @@ export function ContactSection() {
               )}
             </div>
           </motion.div>
+        </div>
       </div>
     </section>
   )
