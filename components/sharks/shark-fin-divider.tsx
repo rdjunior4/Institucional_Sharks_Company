@@ -144,27 +144,27 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
             {/* +Desempenho — top center, above the fin */}
             <motion.div
               className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5 rounded-md border border-sharks-blue-light/20 bg-[#0a1628]/70 px-2.5 py-1 backdrop-blur-sm shadow-[0_0_10px_rgba(91,156,246,0.08)]"
-              style={{ top: "-14px" }}
-              initial={{ opacity: 0, y: 6, scale: 0.92 }}
+              style={{ top: "-55px" }}
+              initial={{ opacity: 0, y: 10, scale: 0.9 }}
               animate={
                 shouldAnimate
                   ? {
                       opacity: 1,
-                      y: [6, 0, -0.6, 0, -0.4, 0],
+                      y: [0, -8, -2, -10, -4, -8, 0],
                       scale: 1,
                     }
                   : {}
               }
               transition={{
-                opacity: { duration: 0.55, delay: popupBaseDelay, ease: "easeOut" },
-                scale: { duration: 0.55, delay: popupBaseDelay, ease: [0.25, 0.1, 0.25, 1] },
+                opacity: { duration: 0.6, delay: popupBaseDelay, ease: "easeOut" },
+                scale: { duration: 0.6, delay: popupBaseDelay, ease: [0.22, 1, 0.36, 1] },
                 y: {
-                  duration: 4.5,
+                  duration: 6,
                   delay: popupBaseDelay,
                   ease: "easeInOut",
                   repeat: Infinity,
                   repeatType: "loop",
-                  times: [0, 0.12, 0.4, 0.55, 0.78, 1],
+                  times: [0, 0.18, 0.38, 0.55, 0.72, 0.88, 1],
                 },
               }}
             >
@@ -177,27 +177,27 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
             {/* Shark Mind — left of the fin */}
             <motion.div
               className="absolute flex items-center gap-1.5 rounded-md border border-sharks-blue-light/20 bg-[#0a1628]/70 px-2.5 py-1 backdrop-blur-sm shadow-[0_0_10px_rgba(91,156,246,0.08)]"
-              style={{ top: "20px", right: "calc(100% + 3px)" }}
-              initial={{ opacity: 0, y: 6, scale: 0.92 }}
+              style={{ top: "-5px", right: "calc(100% + 3px)" }}
+              initial={{ opacity: 0, y: 10, scale: 0.9 }}
               animate={
                 shouldAnimate
                   ? {
                       opacity: 1,
-                      y: [6, 0, -0.5, 0, -0.7, 0],
+                      y: [0, -6, -1, -9, -3, -7, 0],
                       scale: 1,
                     }
                   : {}
               }
               transition={{
-                opacity: { duration: 0.55, delay: popupBaseDelay + 0.15, ease: "easeOut" },
-                scale: { duration: 0.55, delay: popupBaseDelay + 0.15, ease: [0.25, 0.1, 0.25, 1] },
+                opacity: { duration: 0.6, delay: popupBaseDelay + 0.15, ease: "easeOut" },
+                scale: { duration: 0.6, delay: popupBaseDelay + 0.15, ease: [0.22, 1, 0.36, 1] },
                 y: {
-                  duration: 5,
+                  duration: 7,
                   delay: popupBaseDelay + 0.15,
                   ease: "easeInOut",
                   repeat: Infinity,
                   repeatType: "loop",
-                  times: [0, 0.12, 0.4, 0.55, 0.78, 1],
+                  times: [0, 0.15, 0.35, 0.52, 0.7, 0.85, 1],
                 },
               }}
             >
@@ -210,27 +210,27 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
             {/* R$ Resultado — right of the fin */}
             <motion.div
               className="absolute flex items-center gap-1.5 rounded-md border border-sharks-blue-light/20 bg-[#0a1628]/70 px-2.5 py-1 backdrop-blur-sm shadow-[0_0_10px_rgba(91,156,246,0.08)]"
-              style={{ top: "20px", left: "calc(100% + 3px)" }}
-              initial={{ opacity: 0, y: 6, scale: 0.92 }}
+              style={{ top: "-5px", left: "calc(100% + 3px)" }}
+              initial={{ opacity: 0, y: 10, scale: 0.9 }}
               animate={
                 shouldAnimate
                   ? {
                       opacity: 1,
-                      y: [6, 0, -0.5, 0, -0.3, 0],
+                      y: [0, -7, -2, -8, -3, -6, 0],
                       scale: 1,
                     }
                   : {}
               }
               transition={{
-                opacity: { duration: 0.55, delay: popupBaseDelay + 0.3, ease: "easeOut" },
-                scale: { duration: 0.55, delay: popupBaseDelay + 0.3, ease: [0.25, 0.1, 0.25, 1] },
+                opacity: { duration: 0.6, delay: popupBaseDelay + 0.3, ease: "easeOut" },
+                scale: { duration: 0.6, delay: popupBaseDelay + 0.3, ease: [0.22, 1, 0.36, 1] },
                 y: {
-                  duration: 4.8,
+                  duration: 5.5,
                   delay: popupBaseDelay + 0.3,
                   ease: "easeInOut",
                   repeat: Infinity,
                   repeatType: "loop",
-                  times: [0, 0.12, 0.4, 0.55, 0.78, 1],
+                  times: [0, 0.2, 0.4, 0.58, 0.75, 0.9, 1],
                 },
               }}
             >

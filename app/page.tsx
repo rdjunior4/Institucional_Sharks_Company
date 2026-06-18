@@ -1,6 +1,7 @@
 import { Header } from "@/components/sharks/header"
 import { HeroSection } from "@/components/sharks/hero-section"
 import { AboutSection } from "@/components/sharks/about-section"
+import { BrandsCarouselSection } from "@/components/sharks/brands-carousel-section"
 import { SolutionsSection } from "@/components/sharks/solutions-section"
 import { MethodSection } from "@/components/sharks/method-section"
 import { CasesSection } from "@/components/sharks/cases-section"
@@ -15,6 +16,7 @@ export default function SharksCompanyPage() {
       <Header />
       <HeroSection />
       <SharkFinDivider large={true} />
+      <BrandsCarouselSection />
       <AboutSection />
       <SolutionsSection />
       <SharkFinDivider />
