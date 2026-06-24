@@ -80,7 +80,7 @@ export function AboutSection() {
               {/* Image with bottom fade via CSS mask */}
               <div className="relative">
                 <img
-                  src="http://sharkscompany.online/wp-content/uploads/2026/05/Design-sem-nome-9.png"
+                  src="/sharks-about.png"
                   alt="Sharks Company Art"
                   className="relative z-10 w-full h-auto object-contain"
                   style={{

@@ -35,13 +35,13 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
         />
       </div>
 
-      {/* Fin group — slides from right to center */}
+      {/* Fin group — slides from left to right */}
       <motion.div
-        className="absolute bottom-[28%] right-0"
-        initial={{ x: "10%", opacity: 0 }}
+        className="absolute bottom-[28%] left-0"
+        initial={{ x: "-10%", opacity: 0 }}
         animate={
           shouldAnimate
-            ? { x: "calc(-50vw + 20px)", opacity: 1 }
+            ? { x: "calc(50vw - 20px)", opacity: 1 }
             : {}
         }
         transition={{
@@ -132,7 +132,7 @@ export function SharkFinDivider({ large = false }: { large?: boolean }) {
           className="relative"
         >
           <img
-            src="http://sharkscompany.online/wp-content/uploads/2026/05/SIMBOLO-SHARKS-COMPANY-3D-e1777920291363.png"
+            src="/sharks-fin.png"
             alt="Sharks Fin"
             className={`${large ? "h-[64px] sm:h-[80px] lg:h-[120px]" : "h-[48px] sm:h-[64px] lg:h-[80px]"} w-auto drop-shadow-[0_0_15px_rgba(91,156,246,0.3)]`}
           />

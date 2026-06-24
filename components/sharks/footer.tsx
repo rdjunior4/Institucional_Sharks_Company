@@ -35,13 +35,13 @@ export function Footer() {
             transition={{ duration: 0.5 }}
             className="flex flex-col items-center lg:col-span-5 lg:items-start"
           >
-            <Link href="#home" className="inline-flex items-center gap-2">
+            <div className="inline-flex items-center gap-2">
               <img 
-                src="http://sharkscompany.online/wp-content/uploads/2026/05/SHARKS-COMPANY-3D-e1777902632718.png" 
+                src="/sharks-logo.png" 
                 alt="Sharks Company" 
-                className="h-12 w-auto object-contain" 
+                className="h-16 w-auto object-contain" 
               />
-            </Link>
+            </div>
             <p className="mt-4 max-w-md text-pretty text-sm leading-relaxed text-white/55 text-center lg:text-left">
               Marketing estratégico com método, execução e foco em desempenho real.
               Fortalecemos marcas, impulsionamos vendas e construímos resultados consistentes.

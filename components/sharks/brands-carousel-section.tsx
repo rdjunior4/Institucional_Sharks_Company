@@ -10,16 +10,19 @@ import {
 } from "@/components/ui/carousel"
 
 const logos = [
-  { src: "http://sharkscompany.online/wp-content/uploads/2026/05/1.png", alt: "Marca 1" },
-  { src: "http://sharkscompany.online/wp-content/uploads/2026/05/2.png", alt: "Marca 2" },
-  { src: "http://sharkscompany.online/wp-content/uploads/2026/05/3.png", alt: "Marca 3" },
-  { src: "http://sharkscompany.online/wp-content/uploads/2026/05/4.png", alt: "Marca 4" },
-  { src: "http://sharkscompany.online/wp-content/uploads/2026/05/5.png", alt: "Marca 5" },
-  { src: "http://sharkscompany.online/wp-content/uploads/2026/05/6.png", alt: "Marca 6" },
-  { src: "http://sharkscompany.online/wp-content/uploads/2026/05/7.png", alt: "Marca 7" },
-  { src: "http://sharkscompany.online/wp-content/uploads/2026/05/8.png", alt: "Marca 8" },
-  { src: "http://sharkscompany.online/wp-content/uploads/2026/05/9.png", alt: "Marca 9" },
-  { src: "http://sharkscompany.online/wp-content/uploads/2026/05/10.png", alt: "Marca 10" },
+  { src: "/brands/brand-1.png", alt: "Marca 1" },
+  { src: "/brands/brand-2.png", alt: "Marca 2" },
+  { src: "/brands/brand-3.png", alt: "Marca 3" },
+  { src: "/brands/brand-4.png", alt: "Marca 4" },
+  { src: "/brands/brand-5.png", alt: "Marca 5" },
+  { src: "/brands/brand-6.png", alt: "Marca 6" },
+  { src: "/brands/brand-7.png", alt: "Marca 7" },
+  { src: "/brands/brand-8.png", alt: "Marca 8" },
+  { src: "/brands/brand-9.png", alt: "Marca 9" },
+  { src: "/brands/brand-10.png", alt: "Marca 10" },
+  { src: "/brands/brand-11.png", alt: "Marca 11" },
+  { src: "/brands/brand-12.png", alt: "Marca 12" },
+  { src: "/brands/brand-13.png", alt: "Marca 13" },
 ]
 
 export function BrandsCarouselSection() {

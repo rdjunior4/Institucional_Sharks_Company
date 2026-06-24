@@ -39,13 +39,13 @@ export function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-[72px]">
           {/* Logo */}
-          <Link href="#home" className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <img 
-              src="http://sharkscompany.online/wp-content/uploads/2026/05/SHARKS-COMPANY-3D-e1777902632718.png" 
+              src="/sharks-logo.png" 
               alt="Sharks Company" 
-              className="h-10 w-auto object-contain" 
+              className="h-12 w-auto object-contain" 
             />
-          </Link>
+          </div>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex lg:items-center lg:gap-1 lg:rounded-full lg:border lg:border-white/10 lg:bg-white/[0.03] lg:px-1.5 lg:py-1.5 lg:backdrop-blur-sm">
